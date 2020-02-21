@@ -38,4 +38,25 @@ public class Member {
 		mv.setView(rv);
 		return mv;
 	}
+	
+	@RequestMapping("login.myp")
+	public ModelAndView loginProc(ModelAndView mv) {
+		mv.setViewName("member/login");
+		
+		return mv;
+	}
+	
+	@RequestMapping("loginProc.myp")
+	public ModelAndView loginProc(ModelAndView mv, HttpSession session, RedirectView rv, MemberVO mVO) {
+		int cnt = mDAO.loginProc(mVO);
+		if(cnt == 1) {
+			session.setAttribute("SID", mVO.getId());
+			rv.setUrl("/www/main/main.myp");
+		}else {
+			rv.setUrl("/www/member/login.myp");
+		}
+		
+		mv.setView(rv);
+		return mv;
+	}
 }

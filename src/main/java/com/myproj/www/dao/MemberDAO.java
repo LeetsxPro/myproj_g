@@ -16,5 +16,12 @@ public class MemberDAO {
 		
 		return cnt;
 	}
+
+	// 로그인
+	public int loginProc(MemberVO mVO) {
+		int cnt = sqlSession.selectOne("mSQL.loginProc", mVO);
+		
+		return cnt;
+	}
 	
 }

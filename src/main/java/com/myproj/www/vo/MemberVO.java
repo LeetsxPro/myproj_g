@@ -8,12 +8,32 @@ public class MemberVO {
 	private String id;
 	private String pw;
 	private String name;
-	private String birth;
+	private String birthYY;
+	private String birthMM;
+	private String birthDD;
 	private String gender;
 	private String email;
 	private String tel;
 	private Date signUpdate;
 	
+	public String getBirthYY() {
+		return birthYY;
+	}
+	public void setBirthYY(String birthYY) {
+		this.birthYY = birthYY;
+	}
+	public String getBirthMM() {
+		return birthMM;
+	}
+	public void setBirthMM(String birthMM) {
+		this.birthMM = birthMM;
+	}
+	public String getBirthDD() {
+		return birthDD;
+	}
+	public void setBirthDD(String birthDD) {
+		this.birthDD = birthDD;
+	}
 	public int getNo() {
 		return no;
 	}
@@ -37,12 +57,6 @@ public class MemberVO {
 	}
 	public void setName(String name) {
 		this.name = name;
-	}
-	public String getBirth() {
-		return birth;
-	}
-	public void setBirth(String birth) {
-		this.birth = birth;
 	}
 	public String getGender() {
 		return gender;
